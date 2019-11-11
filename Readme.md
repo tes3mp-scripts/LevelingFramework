@@ -1,5 +1,3 @@
-This module does nothing by itself, but provides an API to handle character leveling.
-
 Requires [DataManager](https://github.com/tes3mp-scripts/DataManager) and optionally [espParser](https://github.com/JakobCh/tes3mp_scripts/tree/master/espParser)!
 
 Has to be `require`d before any of the modules that use it.
