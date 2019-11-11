@@ -4,10 +4,18 @@ Requires [DataManager](https://github.com/tes3mp-scripts/DataManager) and option
 
 Has to be `require`d before any of the modules that use it.
 
+Includes an optional module `skillOver100.lua` which allows natural skill progression over 100. You need to require after `main.lua` (such as `require("custom.LevelingFramework.skillOver100")`). For it to function you should also change the `skillCap` value in LevelingFramework config.
+
 You can find the configuration file in `server/data/custom/__config_LevelingFramework.json` after first server launch.
+* `message`
+  * `enabled` whether LevelingFramework should display a message and play a sound like for normal level ups. Default `true`.
+  * `text` text of the skill increase message. Default `Your %s skill increased to %s`.
+  * `sound` path to the skill increase sound file. Default `fx/inter/levelUP.wav`.
+  * `id` id of the GUI message box. Default `6666`.
 * `importESPs` whether to parse ESP files on startup. Setting this to `true` will significantly increase your server starting times and RAM usage overall. It is recommended to use the `lfimportesps` command when necessary. Default `false`. 
 * `skillCap` prevent increasing skills above this value. Default `100`.
 GMST values, more info here [OpenMW Research](https://wiki.openmw.org/index.php?title=Research:Stats_and_Levelling#Skill_progress)
+* `skillNames` list of skill names to display. Default are English version names.
 * `fMajorSkillBonus` Default `0.75`.
 * `fMinorSkillBonus` Default `1`.
 * `fMiscSkillBonus` Default `1.25`.
@@ -29,6 +37,9 @@ Events:
 * `LevelingFramework_OnSkillIncrease` is triggered whenever a skill is increased through this script's methods.  
   callback arguments are `pid` and `arguments`, where `arguments` is a table with the arguments passed to `increaseSkill`: `skillName`, `value`, `keepProgress`.  
   This allows your validators to change values before `increaseSkill` logic takes place, such as to implement a custom skill cap (look into event hooks in `main.lua` for an example)
+
+Commands:
+* `lfimportesps` load skill and class data from ESPs
 
 Examples
 ---

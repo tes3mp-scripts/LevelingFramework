@@ -280,6 +280,18 @@ customEventHooks.registerHandler("LevelingFramework_OnSkillIncrease", function(e
     if skill.base == LevelingFramework.config.skillCap then
         skill.progress = 0
     end
+    if arguments.value > 0 and LevelingFramework.config.message.enabled then
+        tes3mp.MessageBox(
+            pid,
+            LevelingFramework.config.message.id,
+            string.format(
+                LevelingFramework.config.message.text,
+                LevelingFramework.config.skillNames[arguments.skillName],
+                skill.base
+            )
+        )
+        tes3mp.PlaySpeech(pid, LevelingFramework.config.message.sound)
+    end
 end)
 
 
