@@ -4,10 +4,12 @@ function skillOver100.progressSkill(eventStatus, pid)
     local fl = false
     for skillName, skill in pairs(Players[pid].data.skills) do
         local progress = skill.progress
-        local base = skill.base
-        skill.progress = 0
-        LevelingFramework.progressSkill(pid, skillName, progress, 1)
-        fl = fl or (base < skill.base)
+        if progress > 0 then
+            local base = skill.base
+            skill.progress = 0
+            LevelingFramework.progressSkill(pid, skillName, progress, 1)
+            fl = fl or (base < skill.base)
+        end
     end
 
     if fl then

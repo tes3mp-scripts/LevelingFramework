@@ -1,6 +1,7 @@
 local keyOrder = {
     "message",
     "parseESPs",
+    "cmdRank",
     "skillCap",
     "skillNames",
     "fMajorSkillBonus",
@@ -23,6 +24,7 @@ local values = {
         id = 6666,
     },
     parseESPs = false,
+    cmdRank = 2,
     skillCap = 100,
     skillNames = {
         ["Block"] = "Block",

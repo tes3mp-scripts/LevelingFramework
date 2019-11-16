@@ -10,7 +10,8 @@ You can find the configuration file in `server/data/custom/__config_LevelingFram
   * `text` text of the skill increase message. Default `Your %s skill increased to %s`.
   * `sound` path to the skill increase sound file. Default `fx/inter/levelUP.wav`.
   * `id` id of the GUI message box. Default `6666`.
-* `importESPs` whether to parse ESP files on startup. Setting this to `true` will significantly increase your server starting times and RAM usage overall. It is recommended to use the `lfimportesps` command when necessary. Default `false`. 
+* `importESPs` whether to parse ESP files on startup. Setting this to `true` will significantly increase your server starting times and RAM usage overall. It is recommended to use the `lfimportesps` command when necessary. Default `false`.
+* `cmdRank` rank required to use the `lfimportesps` command. Default `2` (admin).
 * `skillCap` prevent increasing skills above this value. Default `100`.
 GMST values, more info here [OpenMW Research](https://wiki.openmw.org/index.php?title=Research:Stats_and_Levelling#Skill_progress)
 * `skillNames` list of skill names to display. Default are English version names.
