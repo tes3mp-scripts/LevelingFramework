@@ -123,9 +123,9 @@ function LevelingFramework.getSkill(skillName)
 end
 
 function LevelingFramework.getClass(pid)
-    local name = tes3mp.GetName(pid):lower()
-    if LevelingFramework.cachedClasses[name] ~= nil then
-        return LevelingFramework.cachedClasses[name]
+    local accountName = Players[pid].accountName
+    if LevelingFramework.cachedClasses[accountName] ~= nil then
+        return LevelingFramework.cachedClasses[accountName]
     end
 
     local player = Players[pid]
@@ -139,7 +139,7 @@ function LevelingFramework.getClass(pid)
         niceClass.specialization = class.specialization
         niceClass.name = class.name
         niceClass.description = class.description
-        LevelingFramework.cachedClasses[className] = niceClass
+        LevelingFramework.cachedClasses[accountName] = niceClass
         return niceClass
     else
         return LevelingFramework.data.classes[className]
