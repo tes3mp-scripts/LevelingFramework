@@ -241,8 +241,8 @@ end
 
 function LevelingFramework.progressSkill(pid, skillName, progress, count)
     count = count or 1
-    local progressCurrent = tes3mp.GetSkillProgress(pid, tes3mp.GetSkillId(skillName))
     local skill = Players[pid].data.skills[skillName]
+    local progressCurrent = skill.progress
     local skillIncrease = 0
     while count > 0 do
         local progressRequirement = LevelingFramework.skillProgressRequirement(pid, skillName)
